@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  var w=  myAppModel.work();
+  var urls=  myAppModel.work();
+  print(urls);
     return MaterialApp(
 
-      home: LayoutScreen()
+      home:UrlList(urls)
     );
   }
 }
