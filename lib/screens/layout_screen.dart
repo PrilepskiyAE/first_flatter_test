@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 
-import '../DI/module.dart';
-import '../domain/AppRepository.dart';
 
 
 class UrlList extends StatefulWidget {
@@ -39,7 +36,8 @@ class _UrlListState extends State<UrlList> {
   Widget build(BuildContext context) {
 
 
-    return Padding(
+    return Scaffold(body:Padding(
+
       padding: const EdgeInsets.only(top: 50, bottom:10, left:10, right:10),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +55,9 @@ class _UrlListState extends State<UrlList> {
                 child: Image.network(keyValue[selectedIndex==-1?0:selectedIndex])
             )
           ]),
-    );
+    ) ,);
+
+
   }
 
   Widget _createListView(BuildContext context, int index) {
@@ -70,6 +70,7 @@ class _UrlListState extends State<UrlList> {
         });
       },
       child: Container(
+        alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 4),
         padding: EdgeInsets.symmetric(vertical: 8),
         color: index == selectedIndex ?
